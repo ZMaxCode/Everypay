@@ -1,0 +1,87 @@
+@import "./fonts.scss";
+
+/*colors*/
+
+$white: #ffffff;
+$text: #2d3238;
+$light-text: #555E68;
+$gray: #f3f9ff;
+$light-blue: #e8f4f7;
+$dark-blue: rgba(56, 152, 254, 0.5);
+$dark_blue_low_opacity: rgba(56, 152, 254, 0.187528);
+$blue: #1792c7;
+$gradient-dark: linear-gradient(180deg, #1792c7 0%, #00b8f0 100%);
+$gradient-light: linear-gradient(270deg, #00B8F0 0%, #00B8F0 0.01%, #B2EEFC 73.96%);
+$gradient-shadow: 0px 6px 18px rgba(53, 152, 254, 0.38185);
+
+/*sizes*/
+
+$desctop-width: 1440px;
+$tablet-width: 768px;
+$mobile-width: 320px;
+
+$xxx-small: 8px;
+$s-small: 12px;
+$small: 14px;
+$x-small: 16px;
+$medium: 18px;
+$s-large: 22px;
+$large: 28px;
+$x-large: 40px;
+
+@mixin bp-mobile {
+    @media screen and (max-width: #{$tablet-width - 1}) {
+        @content;
+    }
+}
+
+@mixin bp-tablet {
+    @media screen and (max-width: #{$desctop-width - 1}) {
+        @content;
+    }
+}
+
+/*fonts*/
+
+$defaultFont: "Avenir Next";
+
+/*transitions*/
+
+$transition: 0.3s;
+
+/*mixins*/
+@mixin header() {
+    font-size: $x-large;
+    font-weight: 700;
+
+    @include bp-tablet{
+        text-align: center;
+    }
+
+    @include bp-mobile{
+        font-size: $large;
+    }
+}
+
+@mixin gradientText($color: $gradient-dark) {
+    background: $color;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin container{
+    max-width: $desctop-width;
+    width: 100%;
+    margin: auto;
+    padding: 0 170px;
+
+    @include bp-tablet {
+        max-width: $tablet-width;
+        padding: 0 65px;
+    }
+
+    @include bp-mobile{
+        max-width: none;
+        padding: 0 20px;
+    }
+}

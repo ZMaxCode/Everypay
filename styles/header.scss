@@ -1,0 +1,147 @@
+.header {
+    padding: 35px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__right {
+        display: flex;
+
+        > .button {
+            margin-left: 45px;
+        }
+
+        @include bp-tablet{
+            display: none;
+        }
+    }
+
+    * {
+        font-size: $small;
+    }
+
+    &__logo{
+        min-width: 170px;
+        max-width: 170px;
+    }
+
+    &__button{
+
+        @mixin line($top){
+            content: '';
+            display: block;
+            width: 27px;
+            height: 3px;
+            background: $gradient-dark;
+            position: absolute;
+            left: 0;
+            top: $top;
+        }
+    
+        width: 27px;
+        display: none;
+        position: relative;
+        border: none;
+        background: none;
+        height: 27px;
+        cursor: pointer;
+    
+        &:before{
+            @include line(10px)
+        }
+    
+        &:after{
+            @include line(20px)
+        }
+    
+        @include bp-tablet{
+            display: block;
+        }
+    
+    }
+}
+
+.linksList,
+.languageList {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    gap: 1vw;
+
+    @include bp-tablet{
+        flex-direction: column;
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        transition: $transition;
+        color: $text;
+
+        @include bp-tablet{
+            &:not(:first-child){
+                margin-top: 30px;
+            }
+
+            font-size: $s-large;
+            color: $light-text;
+        }
+
+        &:hover{
+            color: $blue;
+        }
+
+        &_active {
+            @include gradientText;
+            text-decoration: underline;
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 90%;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 1px;
+                background: $gradient-dark;
+            }
+        }
+    }
+
+    button{
+        width: 120px;
+    }
+}
+
+.languageList {
+    margin-left: 55px;
+
+    & > :not(:first-child) {
+        margin-left: 12px;
+    }
+}
+
+.modalHeader{
+    position: fixed;
+    left: 0;
+    top: 90px;
+    width: 100vw;
+    background: $white;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    height: calc(80vh - 90px);
+    transition: $transition;
+
+    &_visible{
+        visibility: visible;
+        opacity: 1;
+        height: calc(100vh - 90px);
+    }
+}

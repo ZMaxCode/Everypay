@@ -1,0 +1,11 @@
+.forWhoSection{
+    margin-top: 160px;
+
+    @include bp-tablet{
+        margin-top: 110px;
+    }
+
+    &__header{
+        @include header;
+    }
+}

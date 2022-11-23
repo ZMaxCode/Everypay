@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <!--header-->
+
+        <header class="header">
+            <div class="header__left">
+                <img src="./static/img/logo.png" alt="logo" class="header__logo">
+            </div>
+            <div class="header__right">
+                <ul class="linksList">
+                    <li class="linksList__item"><a href="howWork" class="linksList__link">Как это работает?</a></li>
+                    <li class="linksList__item"><a href="forWho" class="linksList__link">Для кого</a></li>
+                    <li class="linksList__item"><a href="cases" class="linksList__link">Кейсы</a></li>
+                    <li class="linksList__item"><a href="tarif" class="linksList__link">Тарифы</a></li>
+                    <li class="linksList__item"><a href="sequrity" class="linksList__link">Безопасность</a></li>
+                </ul>
+                <ul class="languageList">
+                    <li class="languageList__item"><a href="/" class="languageList__link_active">RU</a></li>
+                    <li class="languageList__item"><a href="/" class="languageList__link">EN</a></li>
+                </ul>
+                <a href="/" class="button button_outline">
+                    <div class="button_outline_background"></div>
+                    <span>Подключиться</span>
+                </a>
+            </div>
+            <button class="header__button" id="headerButton"></button>
+
+            <div class="modalHeader" id="headerModal">
+                <ul class="linksList">
+                    <li class="linksList__item"><a href="howWork" class="linksList__link">Как это работает?</a></li>
+                    <li class="linksList__item"><a href="forWho" class="linksList__link">Для кого</a></li>
+                    <li class="linksList__item"><a href="cases" class="linksList__link">Кейсы</a></li>
+                    <li class="linksList__item"><a href="tarif" class="linksList__link">Тарифы</a></li>
+                    <li class="linksList__item"><a href="sequrity" class="linksList__link">Безопасность</a></li>
+                    <li>
+                        <button class="button">Вход</button>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <!--/header-->
+
+    </div>
+
+    <!--swiper-->
+
+    <div class="shortSwiper">
+        <div class="swiper-wrapper">
+
+            <section class="swiper-slide shortSection">
+                <div class="shortInfo">
+                    <h2 class="shortInfo__header">Не пропускайте важные оплаты</h2>
+                    <span class="shortInfo__text">Если от них зависят ваши проекты или старт рекламных
+                        компаний</span>
+                    <form action="#" class="inputBlock shortInfo__form mailForm">
+                        <input type="email" name="email" placeholder="Введите email" class="inputBlock__input">
+                        <button class="inputBlock__button button" id="sendButton1">Узнать</button>
+                        <div class="inputBlock__sendMessage"></div>
+                    </form>
+                </div>
+                <img src="./static/img/firstShortImage.png" alt="cash"
+                    class="shortSection__image shortSection__image_cash" />
+            </section>
+
+            <section class="swiper-slide shortSection">
+                <div class="shortInfo">
+                    <h2 class="shortInfo__header">Сократите издержки на бухгалтерию и коммуникации</h2>
+                    <span class="shortInfo__text">Получайте информацию о платежах на счет компании там, где вам
+                        удобно</span>
+                    <form action="#" class="shortInfo__form inputBlock mailForm">
+                        <input name="email" type="email" placeholder="Введите email" class="inputBlock__input">
+                        <button class="inputBlock__button button">Узнать</button>
+                        <div class="inputBlock__sendMessage"></div>
+                    </form>
+                </div>
+                <img src="./static/img/bank.png" alt="cash" class="shortSection__image shortSection__image_bank" />
+            </section>
+
+            <section class="swiper-slide shortSection">
+                <div class="shortInfo">
+                    <h2 class="shortInfo__header">Создавайте собственные сценарии действий</h2>
+                    <span class="shortInfo__text">при поступлении денег на счет вашей компании</span>
+                    <form action="#" class="shortInfo__form inputBlock mailForm">
+                        <input name="email" type="email" placeholder="Введите email" class="inputBlock__input">
+                        <button class="inputBlock__button button">Узнать</button>
+                        <div class="inputBlock__sendMessage"></div>
+                    </form>
+                </div>
+                <img src="./static/img/screen.png" alt="cash" class="shortSection__image shortSection__image_screen" />
+            </section>
+
+            <section class="swiper-slide shortSection">
+                <div class="shortInfo">
+                    <h2 class="shortInfo__header">Реагируйте на платежи так быстро, как они поступают на ваш счет
+                    </h2>
+                    <form action="#" class="shortInfo__form inputBlock mailForm">
+                        <input name="email" type="email" placeholder="Введите email" class="inputBlock__input">
+                        <button class="inputBlock__button button">Узнать</button>
+                        <div class="inputBlock__sendMessage"></div>
+                    </form>
+                </div>
+                <img src="./static/img/phone.png" alt="cash" class="shortSection__image shortSection__image_phone" />
+            </section>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!--/swiper-->
+
+    <div class="container">
+
+        <!--about company-->
+
+
+        <section class="shortSection">
+            <div class="shortInfo shortInfo_reverse shortInfo_mobile">
+                <h2 class="shortInfo__header shortInfo__header_low shortInfo__header_low">Мы предлагаем вам простой
+                    инструмент, чтобы
+                    автоматизировать
+                    информирование о поступающих оплатах.
+                </h2>
+                <span class="shortInfo__text">Бухгалтер на карантине, а директор недоступен? Ответственный сотрудник
+                    моментально узнает
+                    о поступлении денег на счет компании.</span>
+            </div>
+            <img src="./static/img/Chat.png" alt="cash"
+                class="shortSection__image shortSection__image_mobile shortSection__image_chat" />
+        </section>
+
+        <!--/about company-->
+
+
+
+        <!--how it works-->
+
+        <section class="howWorkSection" id="howWork">
+            <h2 class="howWorkSection__header">Как это работает</h2>
+            <ul class="cardsList">
+
+                <li class="card">
+                    <img src="./static/img/money.png" alt="money" class="card__image card__image_money">
+                    <div class="card__info">
+                        <span class="card__text">Подключайте банковский счет</span>
+                    </div>
+                </li>
+
+                <li class="card">
+                    <img src="./static/img/choise.png" alt="choise" class="card__image card__image_choise">
+                    <div class="card__info">
+                        <span class="card__text">Выберите, куда и кому отправлять информацию</span>
+                    </div>
+                </li>
+
+                <li class="card">
+                    <img src="./static/img/notification.png" alt="notification" class="card__image card__notification">
+                    <div class="card__info">
+                        <span class="card__text">Получайте информацию о поступивших полатах</span>
+                    </div>
+                </li>
+
+            </ul>
+            <img src="./static/img/graph.png" alt="graph" class="howWorkSection__image">
+        </section>
+
+        <!--/how it works-->
+
+
+
+        <!--automate section-->
+
+        <section class="automateSection">
+            <h2 class="automateSection__header">Автоматизируйте бизнес-процессы</h2>
+            <div class="automateSection__right">
+                <span class="automateSection__text">
+                    Подключите привычные приложения, которые вы используете в работе.
+                </span>
+                <form action="#" class="automateSection__form inputBlock inputBlock_outline mailForm">
+                    <input name="email" type="email" placeholder="Введите email" class="inputBlock__input">
+                    <button class="inputBlock__button button">Узнать</button>
+                    <div class="inputBlock__sendMessage"></div>
+                </form>
+            </div>
+        </section>
+
+        <!--/automate section-->
+
+
+
+        <!--banks and integrations-->
+
+        <section class="banksAndIntegrationsSection">
+            <h2 class="banksAndIntegrationsSection__header">Банки и интеграции</h2>
+
+            <div class="tableListBlock">
+                <div class="tableList">
+                    <h3 class="tableList__header">Банки</h3>
+                    <ul class="tableList__list">
+                        <li class="tableList__item">
+                            <img src="./static/img/bank-tochka.png" alt="tochka"
+                                class="banksAndIntegrationsSection__image">
+                        </li>
+                        <li class="tableList__item">
+                            <img src="./static/img/bank-tinkoff.png" alt="tinkoff"
+                                class="banksAndIntegrationsSection__image">
+                        </li>
+                        <li class="tableList__item">
+                            <img src="./static/img/bank-module.png" alt="module"
+                                class="banksAndIntegrationsSection__image">
+                        </li>
+                    </ul>
+                    <hr class="tableList__line">
+                    <ul class="tableList__list tableList__list_vertical">
+                        <li class="tableList__item tableList__item_style tableList__item_vertical">
+                            <img src="./static/img/csv.png" alt="1C" class="tableList__image">
+                            <span class="tableList__text">Загрузка из <b>1С</b></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tableList">
+                    <h3 class="tableList__header">Банки</h3>
+                    <ul class="tableList__list tableList__list_vertical">
+                        <li class="tableList__item tableList__item_vertical">
+                            <img src="./static/img/notification.png" alt="notification" class="tableList__image">
+                            <span class="tableList__text">Push-web уведомления</span>
+                        </li>
+                        <li class="tableList__item tableList__item_vertical">
+                            <img src="./static/img/message.png" alt="message" class="tableList__image">
+                            <span class="tableList__text">E-mail уведомления</span>
+                        </li>
+                        <li class="tableList__item tableList__item_vertical">
+                            <img src="./static/img/telegram.png" alt="telegram" class="tableList__image">
+                            <span class="tableList__text">Telegram</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!--/banks and integrations-->
+
+
+
+        <!--for who-->
+
+        <section class="forWhoSection" id="forWho">
+            <h2 class="forWhoSection__header">Для кого</h2>
+
+            <ul class="cardsList">
+
+                <li class="card card_leftText">
+                    <img src="./static/img/money-tree.png" alt="money-tree" class="card__image card__image_moneyTree">
+                    <div class="card__info card__info_left">
+                        <h3 class="card__header">Малый бизнес</h3>
+                        <span class="card__text">Скорость получения информации о платежах
+                            и минимизация издержек</span>
+                    </div>
+                </li>
+
+                <li class="card">
+                    <img src="./static/img/unicorn.png" alt="unicorn" class="card__image card__image_unicorn">
+                    <div class="card__info card__info_left">
+                        <h3 class="card__header">Малый бизнес</h3>
+                        <span class="card__text">Автоматизация бизнес-процессов
+                            и бухгалтерской рутины</span>
+                    </div>
+
+                </li>
+
+                <li class="card">
+                    <img src="./static/img/lamp.png" alt="lamp" class="card__image card__lamp">
+                    <div class="cardInfo card__info_left">
+                        <h3 class="card__header">Малый бизнес</h3>
+                        <span class="card__text">Быстрое внедрение своих приложений для малого бизнеса и
+                            стартапов</span>
+                    </div>
+
+                </li>
+
+            </ul>
+
+        </section>
+
+        <!--/for who-->
+
+
+
+        <!--cases-->
+
+        <section class="casesSection" id="cases">
+            <h2 class="casesSection__header">Кейсы</h2>
+
+            <div class="casesSwiper">
+                <ul class="interactiveCardsList swiper-wrapper">
+                    <li class="interactiveCard interactiveCard_active swiper-slide">
+                        <div class="interactiveCard__top">
+                            <img src="./static/img/bitrix.png" alt="bitrix" class="interactiveCard__image">
+                            <img src="./static/img/everypay.png" alt="bitrix" class="interactiveCard__image">
+                            <img src="./static/img/telegram.png" alt="bitrix" class="interactiveCard__image">
+                        </div>
+                        <div class="interactiveCard__bottom">
+                            <h3 class="interactiveCard__header">Автоматизация диджитал-агенства</h3>
+                            <a href="/" class="interactiveCard__link">Читать кейс</a>
+                        </div>
+                    </li>
+
+                    <li class="interactiveCard swiper-slide">
+                        <div class="interactiveCard__top">
+                            <img src="./static/img/bitrix.png" alt="bitrix" class="interactiveCard__image">
+                            <img src="./static/img/everypay.png" alt="bitrix" class="interactiveCard__image">
+                            <img src="./static/img/tochka-low.png" alt="bitrix" class="interactiveCard__image">
+                        </div>
+                        <div class="interactiveCard__bottom">
+                            <h3 class="interactiveCard__header">Прием платежей в рекламной медиа-группе</h3>
+                            <a href="/" class="interactiveCard__link">Читать кейс</a>
+                        </div>
+                    </li>
+
+                    <li class="interactiveCard swiper-slide">
+                        <div class="interactiveCard__top">
+                            <img src="./static/img/bitrix.png" alt="bitrix" class="interactiveCard__image">
+                            <img src="./static/img/everypay.png" alt="bitrix" class="interactiveCard__image">
+                            <img src="./static/img/tochka-low.png" alt="bitrix" class="interactiveCard__image">
+                        </div>
+                        <div class="interactiveCard__bottom">
+                            <h3 class="interactiveCard__header">Оптимизация бухгалтерии в производственной компании</h3>
+                            <a href="/" class="interactiveCard__link">Читать кейс</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="swiper-pagination"></div>
+            </div>
+
+
+        </section>
+
+        <!--/cases-->
+
+
+
+        <!--Tarifs-->
+
+        <section class="tarifSection" id="tarif">
+            <img src="./static/img/ruble.png" alt="cash" class="tarifSection__image" />
+            <div class="tarifInfo">
+                <h2 class="tarifInfo__header">Тарифы</h2>
+                <span class="tarifInfo__text">Everypay находится в стадии закрытого beta-теста, но у вас есть
+                    возможность присоединиться к тестированию сервиса.
+                    <br /><br />
+                    Для компаний, участвующих в тестировании, сервис навсегда бесплатен. Напишите нам
+                    и мы с вами свяжемся.
+                </span>
+            </div>
+            <form action="#" class="tarifSection__form inputBlock mailForm">
+                <input name="email" type="email" placeholder="Введите email" class="inputBlock__input">
+                <button class="inputBlock__button button">Узнать</button>
+                <div class="inputBlock__sendMessage"></div>
+            </form>
+        </section>
+
+        <!--/Tarifs-->
+
+
+
+        <!--soon-->
+
+        <section class="soonSection">
+            <h2 class="soonSection__header">Скоро появится</h2>
+
+            <div class="soonSection__table">
+                <div class="soonSection__line">
+                    <div class="soonSection__left">
+                        <h2 class="soonSection__th">Интеграции с CRM-системами Битрикс24 и amoCRM</h2>
+                    </div>
+                    <div class="soonSection__right">
+                        <span class="soonSection__text">Интегрируйте уведомления о платежах прямо
+                            в вашу CRM, в которой работают ваши сотрудники</span>
+                        <div class="soonSection__imagesBlock">
+                            <img src="./static/img/bitrix.png" alt="bitrix" class="soonSection__image">
+                            <img src="./static/img/amoCRM.png" alt="amoCRM" class="soonSection__image">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="soonSection__line">
+                    <div class="soonSection__left">
+                        <h2 class="soonSection__th">Открытое API Everypay</h2>
+                    </div>
+                    <div class="soonSection__right">
+                        <span class="soonSection__text">Подключайте свои системы и интегрируйте уведомления о
+                            поступающих платежах самостоятельно с помощью простого API Everypay</span>
+                    </div>
+                </div>
+
+                <div class="soonSection__line">
+                    <div class="soonSection__left">
+                        <h2 class="soonSection__th">Автоматическое создание платежек</h2>
+                    </div>
+                    <div class="soonSection__right">
+                        <span class="soonSection__text">Загрузите скан счета на оплату в нашу систему
+                            и в банк-клиенте автоматически будет создано платежное поручение на основании данных из
+                            счета. С помощью технологий компьютерного зрения и машинного обучения мы достигаем высокой
+                            точности и скорости работы</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="soonSection__footer">И еще 17 нововведений</h3>
+        </section>
+
+        <!--/soon-->
+
+
+
+        <!--sequrity-->
+
+        <section class="tarifSection tarifSection_reverse" id="sequrity">
+            <img src="./static/img/sequrity.png" alt="cash" class="tarifSection__image" />
+            <div class="tarifInfo">
+                <h2 class="tarifInfo__header">Безопасность</h2>
+                <span class="tarifInfo__text">Использование Everypay полностью безопасно:
+                    подключение к банковскому счету осуществляется в режиме «только
+                    для получения выписок», а хранение информации в системе защищено
+                    и деперсонализировано.
+                </span>
+            </div>
+        </section>
+
+        <!--/sequrity-->
+
+    </div>
+
+    <!--footer-->
+
+    <footer class="footer">
+
+        <div class="container">
+            <h2 class="footer__header">Подключиться</h2>
+            <div class="footer__line">
+                <div class="footer__left">
+                    <span class="footer__text">
+                        Хотите начать пользоваться нашей системой? Напишите нам.
+                    </span>
+                    <h4 class="footer__mailHeader">email</h4>
+                    <a href="mailto:hello@everypay.io" class="footer__mail">hello@everypay.io</a>
+                </div>
+                <form action="#" class="footer__right footer__form" id="startForm">
+                    <div class="inputBlock inputBlock_outline footer__nameInput">
+                        <input name="name" type="text" placeholder="Ваше имя*" class="inputBlock__input" required>
+                    </div>
+                    <div class="inputBlock inputBlock_outline footer__mailInput">
+                        <input name="email" placeholder="Email*" type="email" class="inputBlock__input"
+                            id="sendMailInput" required>
+                        <div class="inputBlock__sendMessage" id="sendMailInputMessage"></div>
+                    </div>
+                    <div class="textareaBlock footer__talk">
+                        <textarea name="about" placeholder="Расскажите о своей компании" class="textareaBlock__textarea"
+                            required></textarea>
+                    </div>
+                    <button class="button">Подключиться</button>
+                </form>
+                <div class="footer__right footer__successMessage" id="startFormSuccess">
+                    Спасибо!<br />Мы приняли ваш запрос.<br /><br />В ближайшее время наш специалист поддержки свяжется
+                    с вами.
+                </div>
+            </div>
+            <div class="footer__underline">
+                <span class="footer__companyName">© 2020, Everypay</span>
+                <a href="/" class="footer__politics">Политика конфиденциальности</a>
+            </div>
+        </div>
+
+    </footer>
+
+    <!--/footer-->
+
+
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+.shortSwiper{
+    height: 600px;
+    position: relative;
+
+    @include bp-tablet{
+        height: auto;
+        overflow-x: hidden;
+    }
+}
+
+.shortSection {
+    margin: 115px 0 0;
+    position: relative;
+
+    @include bp-mobile{
+        margin-top: 50px;
+    }
+
+    &__image {
+        position: absolute;
+        z-index: -1;
+
+        @include bp-tablet{
+            position: static;
+            margin: 100px auto 0;
+
+            &_cash, &_bank, &_phone, &_screen, &_ruble, &_chat, &_sequrity{
+                width: 100%;
+            }
+
+            &_mobile{
+                margin-top: 60px;
+            }
+        }
+
+        @include bp-mobile{
+            margin-top: 30px;
+        }
+
+        &_cash {
+            top: -50px;
+            right: 50px;
+            width: 352px;
+        }
+
+        &_phone {
+            top: -50px;
+            right: 50px;
+            width: 360px;
+        }
+
+        &_bank {
+            top: -50px;
+            right: 50px;
+            width: 350px;
+        }
+
+        &_screen {
+            width: 600px;
+            top: -35px;
+            right: 0px;
+        }
+
+        &_ruble {
+            width: 430px;
+            right: 40px;
+            top: -30px;
+        }
+
+        &_chat{
+            width: 520;
+            top: -80px;
+            left: -30px;
+        }
+
+        &_sequrity{
+            top: -50px;
+            left: 30px;
+            width: 420px;
+        }
+    }
+}
+
+.shortInfo {
+    width: 450px;
+
+    &_reverse{
+        margin: 0 0 0 auto;
+        width: 540px;
+    }
+
+    &__header {
+        @include header;
+        line-height: 46px;
+
+        @include bp-mobile{
+            font-size: $large;
+            line-height: 38px;
+        }
+
+        &_low{
+            font-size: $large;
+            font-weight: 600;
+            line-height: 36px;
+        }
+    }
+
+    &__text {
+        margin-top: 10px;
+        display: block;
+
+        @include bp-mobile{
+            font-size: $x-small;
+        }
+
+        &_big{
+            font-size: $s-large;
+        }
+    }
+
+    &__form {
+        margin-top: 50px;
+
+        @include bp-mobile{
+            display: none !important;
+        }
+    }
+
+    @include bp-tablet {
+        width: 100%;
+        text-align: center;
+
+        &_mobile{
+
+            *{
+                text-align: left;
+            }
+            
+        }
+
+    }
+}

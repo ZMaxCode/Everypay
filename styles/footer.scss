@@ -1,0 +1,114 @@
+.footer{
+    background: url("../static/img/graph.png"), $gray;
+    background-repeat: no-repeat;
+    background-position: calc(50% - 1440px/2.5) 200px;
+    padding: 80px 0 110px;
+    margin-top: 120px;
+
+    @include bp-tablet{
+        background: $gray;
+    }
+
+    &__header{
+        @include header;
+    }
+
+    &__line{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+
+        @include bp-tablet{
+            flex-direction: column;
+        }
+    }
+
+    &__left{
+        max-width: 350px;
+        font-size: $s-large;
+
+        @include bp-tablet{
+            max-width: 440px;
+            width: 100%;
+            margin: 0px auto;
+
+            *{
+                display: block;
+                text-align: center;
+            }
+
+        }
+    }
+
+    &__right{
+        min-width: 300px;
+        max-width: 440px;
+
+        & > :not(:first-child){
+            margin-top: 20px;
+        }
+
+        @include bp-tablet{
+            margin: 70px auto 0;
+            width: 100%;
+        }
+
+        @include bp-mobile{
+            min-width: min-content;
+        }
+
+    }
+
+    &__mailHeader{
+        margin-top: 20px;
+        color: $dark-blue;
+    }
+
+    &__mail{
+        margin-top: 10px;
+        color: $text;
+        text-decoration: none;
+    }
+
+    &__underline{
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include bp-mobile{
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+
+    &__companyName{
+        font-size: $xxx-small;
+    }
+
+    &__politics{
+        text-decoration: none;
+        color: $blue;
+
+        @include bp-mobile{
+            font-size: $s-small;
+            text-align: center;
+        }
+    }
+
+    &__successMessage{
+        display: none;
+
+        &_visible{
+            display: block;
+        }
+    }
+
+    &__form{
+        
+        &_hide{
+            display: none;
+        }
+
+    }
+}

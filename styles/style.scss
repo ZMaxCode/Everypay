@@ -1,0 +1,413 @@
+@import "./params.scss";
+@import "./header.scss";
+@import "./shortSection.scss";
+@import "./aboutSection.scss";
+@import "./howWorkSection.scss";
+@import "./automateSection.scss";
+@import "./banksAndIntegrationsSection.scss";
+@import "./forWhoSection.scss";
+@import "./casesSection.scss";
+@import "./soonSection.scss";
+@import "./footer.scss";
+@import "./tarifSection.scss";
+
+* {
+    font-family: $defaultFont;
+    font-weight: 400;
+    font-size: $medium;
+}
+
+body {
+    background: $white;
+    color: $text;
+    overflow-x: hidden;
+}
+
+b {
+    font-weight: 600;
+}
+
+.swiper-pagination-bullet{
+    width: 12px !important;
+    height: 12px !important;
+    border: 1px solid $dark-blue !important;
+    transition: $transition !important;
+    border-radius: 100px !important;
+    background: none !important;
+
+    &-active{
+        width: 16px !important;
+        height: 16px !important;
+        border-width: 0px !important;
+        background: $gradient-dark !important;
+    }
+}
+
+.swiper-pagination{
+    bottom: -50px !important;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    @include bp-tablet{
+        display: flex;
+    }
+}
+
+.shortSwiper > .swiper-pagination{
+    display: flex;
+    bottom: 20px !important;
+}
+
+.swiper-slide.shortSection{
+    max-width: $desctop-width - 340px;
+    width: calc(100% - 340px);
+
+    @include bp-tablet{
+        max-width: $tablet-width - 130px;
+        width: calc(100% - 130px);
+    }
+
+    @include bp-mobile{
+        max-width: $mobile-width - 40px;
+        width: calc(100% - 40px);
+    }
+}
+
+.container {
+    @include container;
+}
+
+.button {
+    text-decoration: none;
+    position: relative;
+    border-radius: 100px;
+    border: none;
+    background: $gradient-dark;
+    color: $white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: $transition;
+
+    @include bp-mobile{
+        font-size: $x-small;
+    }
+
+    &:hover{
+        box-shadow: $gradient-shadow;
+    }
+
+    &_outline {
+        background: none;
+
+        > span {
+            @include gradientText;
+            z-index: 1;
+            display: inline-block;
+            margin: 10px 20px;
+            font-weight: 600;
+        }
+
+        &:after {
+            content: "";
+            z-index: -1;
+            border-radius: 100px;
+            background: white;
+        }
+
+        &_background {
+            z-index: -2;
+            margin: -2px;
+            background: $gradient-dark;
+        }
+
+        &:after,
+        &_background {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: inherit;
+            border-radius: 100px;
+        }
+    }
+}
+
+.inputBlock {
+    background: $gray;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 100px;
+    position: relative;
+
+    #sendMailInputMessage{
+        top: -10px;
+        left: -1px;
+        width: calc(100% + 2px);
+    }
+
+    &__sendMessage{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100% + 1px);
+        padding: 10px;
+        background: $gray;
+        border-radius: 100px;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: $transition;
+
+        &_visible{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__button {
+        position: relative;
+        min-width: 160px;
+
+        @include bp-mobile{
+            min-width: min-content;
+        }
+    }
+
+    &__input {
+        border: none;
+        background: none;
+        width: 100%;
+        padding-left: 20px;
+        outline: none;
+
+        @include bp-mobile{
+            padding-left: 20px;
+        }
+
+        &::placeholder {
+            color: $dark-blue;
+        }
+    }
+
+    &_outline {
+        background: $white;
+        border: 1px solid $dark-blue;
+
+        > button {
+            transform: scale(1.02);
+        }
+    }
+}
+
+.textareaBlock {
+    &__textarea {
+        background: $white;
+        border: 1px solid $dark-blue;
+        border-radius: 20px;
+        resize: none;
+        width: 100%;
+        padding: 0 20px;
+        outline: none;
+
+        &::placeholder {
+            color: $dark-blue;
+        }
+    }
+}
+
+.cardsList {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 90px 0 0;
+
+    @include bp-mobile{
+        flex-direction: column;
+        margin-top: 40px;
+    }
+}
+
+.card {
+   display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+
+    @include bp-tablet{
+        justify-content: flex-start;
+    }
+
+    @include bp-mobile{
+        &:not(:first-child){
+            margin-top: 40px;
+        }
+    }
+
+    &__info {
+        text-align: center;
+
+        &_left {
+            text-align: left;
+
+            @include bp-mobile{
+                text-align: center;
+            }
+        }
+    }
+
+    &__text{
+        @include bp-tablet{
+            font-size: $x-small;
+        }
+    }
+
+    &__image {
+        max-height: 140px;
+        margin-bottom: 45px;
+
+        @include bp-tablet{
+            max-height: 90px;
+        }
+    }
+
+    &__header {
+        font-size: $s-large;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+}
+
+.tableList {
+    padding: 20px 45px;
+    border: 1px solid $dark-blue_low_opacity;
+
+    @include bp-mobile{
+        padding: 20px 15px;
+    }
+
+    &__header {
+        color: $dark-blue;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px 20px;
+        align-items: center;
+
+        &_vertical {
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 40px;
+        }
+    }
+
+    &__item {
+        &_vertical {
+            display: flex;
+            align-items: center;
+        }
+
+        &_style {
+            &:before {
+                content: "+";
+                @include gradientText;
+                margin-right: 20px;
+                font-size: $large;
+            }
+        }
+    }
+
+    &__image {
+        width: 50px;
+        margin-right: 30px;
+
+        @include bp-mobile{
+            width: 35px;
+            margin-right: 15px;
+        }
+    }
+
+    &__line {
+        border-top: 1px solid $dark-blue_low_opacity;
+        margin: 45px 0;
+    }
+}
+
+.interactiveCardsList {
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-gap: 30px;
+    // list-style: none;
+    margin: 85px 0 0;
+    padding: 0;
+}
+
+.interactiveCard {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 25px 20px;
+    position: relative;
+    border: 1px solid $dark-blue_low_opacity;
+    justify-content: space-between;
+    max-width: 350px;
+    height: auto !important;
+
+    &_active {
+        border: none;
+        background: $gray;
+
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: $gradient-dark;
+        }
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        margin-bottom: 80px;
+    }
+
+    &__image {
+        max-height: 40px;
+        max-width: 70px;
+
+        &:not(:first-child) {
+            margin-left: 10px;
+        }
+    }
+
+    &__header {
+        font-size: $s-large;
+        font-weight: 600;
+    }
+
+    &__link {
+        text-decoration: none;
+        @include gradientText;
+        margin-top: 20px;
+        display: block;
+
+        &:after {
+            content: ">";
+            margin-left: 5px;
+        }
+    }
+}
+
+.casesSwiper{
+    position: relative;
+}

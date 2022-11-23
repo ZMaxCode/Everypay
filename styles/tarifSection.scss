@@ -1,0 +1,95 @@
+.tarifSection{
+
+    margin-top: 160px;
+    position: relative;
+
+    @include bp-tablet{
+        margin-top: 110px;
+    }
+
+    &__form{
+        margin-top: 40px;
+        width: 100%;
+        max-width: 440px;
+
+        @include bp-tablet{
+            margin: 40px auto 0;
+        }
+    }
+
+    &__image{
+        position: absolute;
+        right: 30px;
+        top: 0;
+        width: 300px;
+        z-index: -1;
+
+        @include bp-tablet{
+            width: 260px;
+            right: 0px;
+            top: 120px;
+        }
+
+        @include bp-mobile{
+            position:static;
+            width: 80%;
+            max-width: $mobile-width;
+            z-index: 1;
+            margin: auto;
+            display: block;
+        }
+    }
+
+    &_reverse{
+        .tarifInfo > *{
+
+            margin-right: 0;
+            margin-left: auto;
+
+            @include bp-tablet{
+                
+            }
+        }
+
+        .tarifSection__image{
+            left: 30px;
+            right: 0;
+        }
+    }
+
+}
+
+.tarifInfo{
+
+    &__header{
+        @include header;
+        width: 560px;
+
+        @include bp-tablet{
+            width: 100%;
+            text-align: center;
+        }
+
+        @include bp-mobile{
+            margin-top: 60px;
+        }
+    }
+
+    &__text{
+        margin-top: 70px;
+        display: block;
+        font-size: $s-large;
+        width: 560px;
+
+        @include bp-tablet{
+            width: 380px;
+            font-size: $medium;
+        }
+
+        @include bp-mobile{
+            width: 100%;
+        }
+    }
+
+}
+

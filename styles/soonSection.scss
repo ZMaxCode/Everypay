@@ -1,0 +1,145 @@
+.soonSection{
+
+    margin-top: 160px;
+
+    @include bp-tablet{
+        margin-top: 110px;
+    }
+
+    &__header{
+        @include header;
+    }
+
+    &__table{
+        margin-top: 90px;
+
+        @include bp-tablet{
+            margin-top: 70px;
+        }
+    }
+
+    &__footer{
+        font-size: $s-large;
+        text-align: center;
+        font-weight: 600;
+        margin-top: 40px;
+    }
+
+    &__line{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 70px;
+        padding-bottom: 50px;
+        position: relative;
+
+        @include bp-tablet{
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 20px;
+            padding-bottom: 30px;
+        }
+        
+        &:after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: $gradient-dark;
+            display: block;
+            opacity: 0.2;
+        }
+
+        &:not(:first-child){
+            margin-top: 50px;
+
+            @include bp-tablet{
+                margin-top: 30px;
+            }
+        }
+    }
+
+    &__th{
+        font-size: $large;
+        line-height: 36px;
+        
+        @include bp-tablet{
+            max-width: 440px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        @include bp-mobile{
+            font-size: $medium;
+            font-weight: 600;
+            text-align: left;
+            padding-left: 30px;
+            line-height: 24px;
+        }
+        
+    }
+
+    &__right{
+
+        position: relative;
+        padding-left: 55px;
+
+        @include bp-tablet{
+            max-width: 440px;
+            margin: 0 auto;
+        }
+        
+        &:before{
+            content: '';
+            display: block;
+            width: 43px;
+            height: 3px;
+            background: $gradient-light;
+            position: absolute;
+            top: 10px;
+            left: 0;
+
+            @include bp-mobile{
+                width: 20px;
+            }
+        }
+
+        @include bp-mobile{
+            padding-left: 30px;
+        }
+    }
+
+    &__text{
+
+        @include bp-mobile{
+            font-size: $x-small;
+        }
+
+    }
+
+    &__imagesBlock{
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+
+        @include bp-tablet{
+            justify-content: center;
+        }
+    }
+
+    &__image{
+        max-height: 32px;
+        max-width: 110px;
+        
+        &:not(:first-child){
+            margin-left: 20px;
+        }
+
+        @include bp-tablet{
+            &:last-child{
+                margin-right: 55px;
+            }
+        }
+    }
+
+}

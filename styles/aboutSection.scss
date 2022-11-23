@@ -1,0 +1,32 @@
+.aboutSection{
+    margin: 200px 0 160px;
+    position: relative;
+    height: 325px;
+
+    &__image{
+        position: absolute;
+        left: 0;
+        top: -80px;
+        width: 519px;
+        z-index: -1;
+    }
+}
+
+.aboutInfo{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 545px;
+
+    &__header{
+        font-weight: 600;
+        line-height: 36px;
+        font-size: $large;
+    }
+
+    &__text{
+        margin-top: 25px;
+        font-size: $medium;
+        display: block;
+    }
+}
