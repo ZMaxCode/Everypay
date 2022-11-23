@@ -21,6 +21,10 @@ body {
     background: $white;
     color: $text;
     overflow-x: hidden;
+
+    &.hideScroll{
+        overflow: hidden;
+    }
 }
 
 b {

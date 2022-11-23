@@ -66,7 +66,8 @@ const initHeaderButton = () => {
 
         //hide and show modal window
         headerModal.classList.toggle('modalHeader_visible');
-
+        
+        document.body.classList.toggle('hideScroll');
     })
 
 }
@@ -103,6 +104,7 @@ const initAnchors = () => {
 
             //hide modal window
             if (headerModal) headerModal.classList.remove('modalHeader_visible');
+            document.body.classList.remove('hideScroll');
 
         })
 
