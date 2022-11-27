@@ -74,6 +74,7 @@ $transition: 0.3s;
     width: 100%;
     margin: auto;
     padding: 0 170px;
+    position: relative;
 
     @include bp-tablet {
         max-width: $tablet-width;

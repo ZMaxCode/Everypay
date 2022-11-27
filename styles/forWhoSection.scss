@@ -1,5 +1,6 @@
 .forWhoSection{
     margin-top: 160px;
+    position: relative;
 
     @include bp-tablet{
         margin-top: 110px;
@@ -8,4 +9,25 @@
     &__header{
         @include header;
     }
+
+    &__image{
+        position: absolute;
+        height: 560px;
+        right: -150px;
+        top: 115px;
+        z-index: -1;
+
+        @include bp-tablet{
+            height: 325px;
+            top: 100px;
+            right: -50px;
+        }
+
+        @include bp-mobile{
+            height: 233px;
+            top: 520px;
+            right: -100px;
+        }
+    }
+
 }

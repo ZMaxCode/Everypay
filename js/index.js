@@ -94,11 +94,13 @@ const initAnchors = () => {
             if (!href) return;
 
             //get offset of top for scroll to position
-            const findedAnchorPosition = document.getElementById(href).offsetTop;
+            const findedAnchorPosition = document.getElementById(href).getBoundingClientRect();
+
+            console.log(findedAnchorPosition)
 
             //scroll to position
             window.scrollTo({
-                top: findedAnchorPosition - 150,
+                top: findedAnchorPosition.top - 150 + window.pageYOffset,
                 behavior: 'smooth'
             })
 
@@ -164,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
         loop: true,
         slidesPerView: 'auto',
         centeredSlides: true,
-        spaceBetween: 40,
+        spaceBetween: 120,
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
@@ -172,6 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const casesSwiper = new Swiper('.casesSwiper', {
+        modules: [Pagination],
         loop: false,
         slidesPerView: 'auto',
         spaceBetween: 20,

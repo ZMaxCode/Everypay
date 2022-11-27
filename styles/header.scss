@@ -1,17 +1,44 @@
 .header {
-    padding: 35px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: fixed;
+    z-index: 15;
+    background: $white;
+    width: 100%;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        @include container;
+        padding-top: 35px;
+        padding-bottom: 35px;
+
+        @include bp-tablet {
+            padding-top: 35px;
+            padding-bottom: 35px;
+        }
+
+        @include bp-mobile{
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+    }
 
     &__right {
         display: flex;
 
         > .button {
             margin-left: 45px;
+            padding: 15px 30px;
+            width: 175px;
+            text-align: center;
+
+            span{
+                margin: 0;
+            }
         }
 
-        @include bp-tablet{
+        @include bp-tablet {
             display: none;
         }
     }
@@ -20,15 +47,19 @@
         font-size: $small;
     }
 
-    &__logo{
-        min-width: 170px;
-        max-width: 170px;
+    &__logo {
+        min-width: 130px;
+        max-width: 130px;
+
+        @include bp-mobile{
+            min-width: 100px;
+            max-width: 100px;
+        }
     }
 
-    &__button{
-
-        @mixin line($top){
-            content: '';
+    &__button {
+        @mixin line($top) {
+            content: "";
             display: block;
             width: 27px;
             height: 3px;
@@ -37,7 +68,7 @@
             left: 0;
             top: $top;
         }
-    
+
         width: 27px;
         display: none;
         position: relative;
@@ -45,19 +76,18 @@
         background: none;
         height: 27px;
         cursor: pointer;
-    
-        &:before{
-            @include line(10px)
+
+        &:before {
+            @include line(10px);
         }
-    
-        &:after{
-            @include line(20px)
+
+        &:after {
+            @include line(20px);
         }
-    
-        @include bp-tablet{
+
+        @include bp-tablet {
             display: block;
         }
-    
     }
 }
 
@@ -68,9 +98,8 @@
     margin: 0;
     padding: 0;
     align-items: center;
-    gap: 1vw;
 
-    @include bp-tablet{
+    @include bp-tablet {
         flex-direction: column;
     }
 
@@ -80,8 +109,8 @@
         transition: $transition;
         color: $text;
 
-        @include bp-tablet{
-            &:not(:first-child){
+        @include bp-tablet {
+            &:not(:first-child) {
                 margin-top: 30px;
             }
 
@@ -89,7 +118,7 @@
             color: $light-text;
         }
 
-        &:hover{
+        &:hover {
             color: $blue;
         }
 
@@ -111,8 +140,10 @@
         }
     }
 
-    button{
-        width: 120px;
+    &__item{
+        &:not(:first-child){
+            margin-left: 40px;
+        }
     }
 }
 
@@ -124,7 +155,7 @@
     }
 }
 
-.modalHeader{
+.modalHeader {
     position: fixed;
     left: 0;
     top: 90px;
@@ -139,9 +170,30 @@
     height: calc(80vh - 90px);
     transition: $transition;
 
-    &_visible{
+    &_visible {
         visibility: visible;
         opacity: 1;
         height: calc(100vh - 90px);
+
+        @include bp-mobile{
+            height: calc(100vh - 87px);
+        }
+    }
+
+    .linksList__item{
+        margin-left: 0;
+
+        &:not(:first-child){
+            margin-top: 30px;
+        }
+    }
+
+    .button{
+        width: 120px;
+        margin-top: 36px;
+    }
+
+    @include bp-mobile{
+        top: 87px;
     }
 }

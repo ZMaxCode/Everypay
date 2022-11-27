@@ -22,7 +22,7 @@ body {
     color: $text;
     overflow-x: hidden;
 
-    &.hideScroll{
+    &.hideScroll {
         overflow: hidden;
     }
 }
@@ -31,7 +31,7 @@ b {
     font-weight: 600;
 }
 
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
     width: 12px !important;
     height: 12px !important;
     border: 1px solid $dark-blue !important;
@@ -39,7 +39,7 @@ b {
     border-radius: 100px !important;
     background: none !important;
 
-    &-active{
+    &-active {
         width: 16px !important;
         height: 16px !important;
         border-width: 0px !important;
@@ -47,32 +47,36 @@ b {
     }
 }
 
-.swiper-pagination{
+.swiper-pagination {
     bottom: -50px !important;
     display: none;
     align-items: center;
     justify-content: center;
 
-    @include bp-tablet{
+    @include bp-tablet {
         display: flex;
     }
 }
 
-.shortSwiper > .swiper-pagination{
+.shortSwiper > .swiper-pagination {
     display: flex;
-    bottom: 20px !important;
+    bottom: -130px !important;
+
+    @include bp-tablet {
+        bottom: 0px !important;
+    }
 }
 
-.swiper-slide.shortSection{
+.swiper-slide.shortSection {
     max-width: $desctop-width - 340px;
     width: calc(100% - 340px);
 
-    @include bp-tablet{
+    @include bp-tablet {
         max-width: $tablet-width - 130px;
         width: calc(100% - 130px);
     }
 
-    @include bp-mobile{
+    @include bp-mobile {
         max-width: $mobile-width - 40px;
         width: calc(100% - 40px);
     }
@@ -92,12 +96,9 @@ b {
     padding: 10px 20px;
     cursor: pointer;
     transition: $transition;
+    font-size: $x-small;
 
-    @include bp-mobile{
-        font-size: $x-small;
-    }
-
-    &:hover{
+    &:hover {
         box-shadow: $gradient-shadow;
     }
 
@@ -145,13 +146,13 @@ b {
     border-radius: 100px;
     position: relative;
 
-    #sendMailInputMessage{
+    #sendMailInputMessage {
         top: -10px;
         left: -1px;
         width: calc(100% + 2px);
     }
 
-    &__sendMessage{
+    &__sendMessage {
         position: absolute;
         top: 0;
         left: 0;
@@ -164,7 +165,7 @@ b {
         visibility: hidden;
         transition: $transition;
 
-        &_visible{
+        &_visible {
             opacity: 1;
             visibility: visible;
         }
@@ -174,7 +175,7 @@ b {
         position: relative;
         min-width: 160px;
 
-        @include bp-mobile{
+        @include bp-mobile {
             min-width: min-content;
         }
     }
@@ -185,13 +186,22 @@ b {
         width: 100%;
         padding-left: 20px;
         outline: none;
+        font-size: $x-small;
 
-        @include bp-mobile{
+        @include bp-mobile {
             padding-left: 20px;
         }
 
         &::placeholder {
             color: $dark-blue;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+            box-shadow: 0 0 0 30px $gray inset !important;
+            border-radius: 100px;
         }
     }
 
@@ -201,6 +211,16 @@ b {
 
         > button {
             transform: scale(1.02);
+        }
+
+        > .inputBlock__input {
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active {
+                box-shadow: 0 0 0 30px $white inset !important;
+                border-radius: 100px;
+            }
         }
     }
 }
@@ -228,25 +248,25 @@ b {
     padding: 0;
     margin: 90px 0 0;
 
-    @include bp-mobile{
+    @include bp-mobile {
         flex-direction: column;
         margin-top: 40px;
     }
 }
 
 .card {
-   display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     flex: 1;
 
-    @include bp-tablet{
+    @include bp-tablet {
         justify-content: flex-start;
     }
 
-    @include bp-mobile{
-        &:not(:first-child){
+    @include bp-mobile {
+        &:not(:first-child) {
             margin-top: 40px;
         }
     }
@@ -257,14 +277,14 @@ b {
         &_left {
             text-align: left;
 
-            @include bp-mobile{
+            @include bp-mobile {
                 text-align: center;
             }
         }
     }
 
-    &__text{
-        @include bp-tablet{
+    &__text {
+        @include bp-tablet {
             font-size: $x-small;
         }
     }
@@ -273,7 +293,7 @@ b {
         max-height: 140px;
         margin-bottom: 45px;
 
-        @include bp-tablet{
+        @include bp-tablet {
             max-height: 90px;
         }
     }
@@ -289,7 +309,7 @@ b {
     padding: 20px 45px;
     border: 1px solid $dark-blue_low_opacity;
 
-    @include bp-mobile{
+    @include bp-mobile {
         padding: 20px 15px;
     }
 
@@ -332,7 +352,7 @@ b {
         width: 50px;
         margin-right: 30px;
 
-        @include bp-mobile{
+        @include bp-mobile {
             width: 35px;
             margin-right: 15px;
         }
@@ -345,10 +365,6 @@ b {
 }
 
 .interactiveCardsList {
-    // display: grid;
-    // grid-template-columns: repeat(3, 1fr);
-    // grid-gap: 30px;
-    // list-style: none;
     margin: 85px 0 0;
     padding: 0;
 }
@@ -362,20 +378,28 @@ b {
     justify-content: space-between;
     max-width: 350px;
     height: auto !important;
+    transition: $transition;
 
-    &_active {
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        height: 3px;
+        width: 100%;
+        background: $gradient-dark;
+        opacity: 0;
+        transition: $transition;
+    }
+
+    &:hover {
         border: none;
         background: $gray;
+        border: 1px solid $gray;
 
         &:before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            display: block;
-            height: 3px;
-            width: 100%;
-            background: $gradient-dark;
+            opacity: 1;
         }
     }
 
@@ -401,17 +425,22 @@ b {
 
     &__link {
         text-decoration: none;
-        @include gradientText;
+        color: $text;
         margin-top: 20px;
         display: block;
+        transition: $transition;
 
         &:after {
             content: ">";
             margin-left: 5px;
         }
+
+        &:hover{
+            color: $blue;
+        }
     }
 }
 
-.casesSwiper{
+.casesSwiper {
     position: relative;
 }

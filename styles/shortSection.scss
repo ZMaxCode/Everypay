@@ -9,11 +9,11 @@
 }
 
 .shortSection {
-    margin: 115px 0 0;
+    margin: 215px 0 0;
     position: relative;
 
     @include bp-mobile{
-        margin-top: 50px;
+        margin-top: 110px;
     }
 
     &__image {
@@ -22,7 +22,7 @@
 
         @include bp-tablet{
             position: static;
-            margin: 100px auto 0;
+            margin: 100px auto 30px;
 
             &_cash, &_bank, &_phone, &_screen, &_ruble, &_chat, &_sequrity{
                 width: 100%;
@@ -52,13 +52,13 @@
         &_bank {
             top: -50px;
             right: 50px;
-            width: 350px;
+            width: 415px;
         }
 
         &_screen {
-            width: 600px;
+            width: 750px;
             top: -35px;
-            right: 0px;
+            right: -100px;
         }
 
         &_ruble {
@@ -77,6 +77,16 @@
             top: -50px;
             left: 30px;
             width: 420px;
+        }
+
+        &_check{
+            height: 560px;
+            top: -400px;
+            right: -50px;
+
+            @include bp-tablet{
+                display: none;
+            }
         }
     }
 }

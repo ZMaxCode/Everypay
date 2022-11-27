@@ -1,6 +1,7 @@
 .casesSection{
 
     margin-top: 190px;
+    position: relative;
 
     @include bp-tablet{
         margin-top: 110px;
@@ -8,6 +9,26 @@
 
     &__header{
         @include header;
+    }
+
+    &__img{
+        position: absolute;
+        transform: rotate(270deg);
+        top: -30px;
+        left: -400px;
+        z-index: -1;
+
+        @include bp-tablet{
+            height: 470px;
+            top: 50px;
+            left: -300px;
+        }
+
+        @include bp-mobile{
+            top: 150px;
+            height: 400px;
+            left: -100px;
+        }
     }
 
 }

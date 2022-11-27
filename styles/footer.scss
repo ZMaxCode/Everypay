@@ -41,7 +41,7 @@
     }
 
     &__right{
-        min-width: 300px;
+        min-width: 440px;
         max-width: 440px;
 
         & > :not(:first-child){
@@ -68,6 +68,11 @@
         margin-top: 10px;
         color: $text;
         text-decoration: none;
+        transition: $transition;
+
+        &:hover{
+            color: $blue;
+        }
     }
 
     &__underline{
@@ -88,11 +93,16 @@
 
     &__politics{
         text-decoration: none;
-        color: $blue;
+        color: $text;
+        transition: $transition;
 
         @include bp-mobile{
             font-size: $s-small;
             text-align: center;
+        }
+
+        &:hover{
+            color: $blue;
         }
     }
 
